@@ -23,6 +23,42 @@ img {
     margin: 0 auto;
 }
 
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 35px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 25px;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+h6 {
+    font-size: 18px;
+}
+
+p {
+    font-size: 14px;
+}
+
+span {
+    font-weight: 12px;
+}
+
+small {
+    font-size: 10px;
+}
+
 .newspaper {
     display: grid;
     grid-template-columns: minmax(auto, 1200px);
@@ -30,11 +66,10 @@ img {
     // overflow: auto;
     &__container {
         display: grid;
-        // grid-template-columns: 70px 1fr 320px;
-        // grid-template-areas: "badge title form" ". description form" ". countdown form";
+        grid-template-rows: 40% 60%;
         gap: 10px;
         margin: 10px;
-        // border: 1px solid;
+        border: 1px solid;
         height: 100vh;
         overflow: hidden;
     }
@@ -65,11 +100,7 @@ img {
         }
         &--name {
             text-transform: uppercase;
-            h5 {
-                font-size: 17px;
-            }
             p {
-                font-size: 13px;
                 width: 90%;
                 border-bottom: 0.5px solid $color-line;
                 padding-bottom: 2px;
@@ -93,7 +124,6 @@ img {
                 }
             }
             small {
-                font-size: 10px;
                 font-weight: bold;
                 text-transform: capitalize;
             }
@@ -111,11 +141,9 @@ img {
         h4 {
             font-family: 'Open Sans Condensed', sans-serif;
             text-transform: uppercase;
-            font-size: 25px;
             letter-spacing: 2.2px;
         }
         small {
-            font-size: 12px;
             color: $color-date;
             &::before,
             &::after {
@@ -149,14 +177,12 @@ img {
                     justify-content: center;
                     .price {
                         font-weight: bold;
-                        font-weight: 14px;
                         font-family: 'Merriweather', serif;
                     }
                     .city {
                         small {
                             display: block;
                             margin-left: 5px;
-                            font-size: 10px;
                             text-align-last: left;
                             padding-left: 5px;
                             border-left: 1px solid $color-line;
@@ -196,9 +222,6 @@ img {
                     margin: 5px;
                     background-color: #fbc0dd;
                     font-weight: bold;
-                    small {
-                        font-size: 12px;
-                    }
                 }
             }
         }
@@ -219,21 +242,43 @@ img {
             }
             ul {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
                 list-style: none;
                 font-size: 12px;
                 text-align: center;
                 justify-content: center;
+                justify-items: center;
                 font-weight: bold;
                 a {
                     text-decoration: none;
                     color: $color-menu;
+                    &:hover {
+                        text-decoration: underline;
+                    }
                 }
             }
             .search {
                 width: 18px;
                 height: 18px;
             }
+        }
+    }
+}
+
+.Main {
+    display: grid;
+    grid-template: repeat(3, 1fr) / 1fr 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    &__news {
+        &-first {
+            grid-row-end: span 1;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            &--txt {}
+        }
+        &-secd {
+            grid-row-end: span 2;
         }
     }
 }
