@@ -40,6 +40,8 @@ h6 {
 
 p {
   font-size: 14px;
+  color: #aaa8aa;
+  line-height: 1.5;
 }
 
 span {
@@ -62,18 +64,18 @@ a {
 }
 .newspaper__container {
   display: grid;
-  grid-template-rows: 40% 60%;
+  grid-template-rows: 25% 75%;
   gap: 10px;
   margin: 10px;
-  border: 1px solid;
+  padding: 20px;
   overflow-x: hidden;
 }
 
 .Header {
   display: grid;
-  grid-template: 2fr 1fr 1fr/repeat(3, 1fr);
+  grid-template: 100px 50px 50px/repeat(3, 1fr);
   gap: 10px;
-  height: 50px;
+  height: 100%;
   align-items: center;
   justify-content: center;
   justify-items: center;
@@ -236,7 +238,7 @@ a {
 }
 .Header__menu--container ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
   list-style: none;
   font-size: 12px;
   text-align: center;
@@ -259,16 +261,23 @@ a {
 .Main {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr;
   gap: 20px;
   padding: 20px;
-  height: 100vh;
+  align-content: space-between;
+  align-items: stretch;
+}
+.Main__news {
+  display: grid;
+  grid-template-rows: 290px 315px;
 }
 .Main__news-first {
   grid-row-end: span 1;
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 5px;
-  padding-bottom: 10px;
+  padding: 10px 0;
+  border-top: 1px solid #747375;
   border-bottom: 1px solid #747375;
   margin-bottom: 20px;
 }
@@ -276,22 +285,33 @@ a {
 .Main__news-first--txt p {
   margin-bottom: 5px;
 }
-.Main__news-second {
-  grid-row-end: span 2;
-  grid-column: span 1;
+.Main__news-first--txt strong {
+  color: #000;
 }
 .Main__news-second--headline {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 80px 1fr;
+  gap: 10px;
   justify-content: center;
   align-items: center;
 }
 .Main__news-second--headline figure {
-  width: 100px;
+  width: 80px;
+}
+.Main__news-second--headline .title .subtitle {
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+.Main__news-second--headline .title .date {
+  font-size: 13px;
+  color: #9d9c9d;
+  margin: 10px 0;
 }
 .Main__news-second--txt {
   padding-bottom: 10px;
   border-bottom: 1px solid #747375;
+  margin-top: 5px;
 }
 .Main__news-second--book {
   background-color: #010001;
@@ -302,9 +322,10 @@ a {
   justify-content: center;
   align-items: center;
   justify-items: center;
+  margin: 20px 10px;
 }
 .Main__news-second--book .book-logo {
-  padding-bottom: 15px;
+  padding-bottom: 10px;
 }
 .Main__news-second--book .book-logo span {
   font-family: "Dancing Script", cursive;
@@ -328,8 +349,164 @@ a {
 .Main__news-second--book .book-info p small {
   display: block;
 }
+.Main__news-second--book .book-info .btn-link {
+  margin: 0;
+}
 .Main__news-second--book .book-info .btn-link span {
   margin-left: 5px;
+}
+.Main__principal-new {
+  display: grid;
+  grid-template-rows: 320px 260px;
+  padding: 10px;
+  border: 1px solid #747375;
+  align-items: stretch;
+  min-height: 590px;
+}
+.Main__principal-new .cover {
+  height: 320px;
+}
+.Main__principal-new .info h5 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+.Main__principal-new .info .txt {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.Main__principal-new .info-share {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Main__principal-new .info-share small {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #9d9c9d;
+}
+.Main__principal-new .info-share .share {
+  border: 0.1px solid #747375;
+  border-radius: 50%;
+  padding: 2px;
+}
+.Main__principal-new .info-share .share span {
+  border-radius: 50%;
+  background-color: #ffe4f4;
+}
+.Main__principal-new .info .autor {
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+}
+.Main__principal-new .info .autor-info {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 5px;
+}
+.Main__principal-new .info .autor-info figure {
+  width: 60px;
+  height: 60px;
+}
+.Main__principal-new .info .autor-info .about {
+  margin: auto 0;
+  align-self: center;
+}
+.Main__principal-new .info .autor-info .about p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+.Main__principal-new .info .autor-info .about .date {
+  font-size: 12px;
+  color: #9d9c9d;
+}
+.Main__principal-new .info .autor .btns-navigation {
+  margin-right: 0;
+  text-align: right;
+}
+.Main__principal-new .info .autor .btns-navigation a {
+  padding: 10px;
+  background-color: #010001;
+  color: #fff;
+  font-weight: bold;
+}
+.Main__advertisement {
+  display: grid;
+  gap: 10px;
+}
+.Main__advertisement--book {
+  background-color: #daf0ff;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 100px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.Main__advertisement--book figure {
+  width: 95px;
+  margin-top: -20px;
+}
+.Main__advertisement--book__info {
+  padding: 5px 15px;
+}
+.Main__advertisement--book__info small {
+  display: block;
+  margin-bottom: 10px;
+}
+.Main__advertisement--book__info .btn-link {
+  border-radius: 3px;
+  padding: 5px;
+  margin-top: 10px;
+  border: 1px solid #747375;
+}
+.Main__advertisement--column {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+.Main__advertisement--column .column-news {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 15px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #747375;
+}
+.Main__advertisement--column .column-news figure {
+  width: 100px;
+  height: 80px;
+}
+.Main__advertisement--column .column-news h6 {
+  line-height: 1;
+}
+.Main__advertisement--column .column-news h6 em {
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+}
+.Main__advertisement--subscribe {
+  margin-top: 20px;
+  align-self: end;
+}
+.Main__advertisement--subscribe input {
+  width: 100%;
+  border: none;
+  padding: 5px 0;
+  border-top: 1px solid #747375;
+  border-bottom: 1px solid #747375;
+  margin: 10px 0;
+}
+.Main__advertisement--subscribe .btn-signme {
+  padding: 10px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  background-color: #010001;
+  color: #fff;
+  margin: 10px auto;
 }
 .Main .btn-link {
   margin-top: 10px;

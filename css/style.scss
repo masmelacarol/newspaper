@@ -50,6 +50,8 @@ h6 {
 
 p {
     font-size: 14px;
+    color: #aaa8aa;
+    line-height: 1.5;
 }
 
 span {
@@ -71,19 +73,19 @@ a {
     justify-content: center;
     &__container {
         display: grid;
-        grid-template-rows: 40% 60%;
+        grid-template-rows: 25% 75%;
         gap: 10px;
         margin: 10px;
-        border: 1px solid;
+        padding: 20px;
         overflow-x: hidden;
     }
 }
 
 .Header {
     display: grid;
-    grid-template: 2fr 1fr 1fr / repeat(3, 1fr);
+    grid-template: 100px 50px 50px / repeat(3, 1fr);
     gap: 10px;
-    height: 50px;
+    height: 100%;
     align-items: center;
     justify-content: center;
     justify-items: center;
@@ -246,7 +248,7 @@ a {
             }
             ul {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
                 list-style: none;
                 font-size: 12px;
                 text-align: center;
@@ -272,16 +274,21 @@ a {
 .Main {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr;
     gap: 20px;
     padding: 20px;
-    height: 100vh;
+    align-content: space-between;
+    align-items: stretch;
     &__news {
+        display: grid;
+        grid-template-rows: 290px 315px;
         &-first {
             grid-row-end: span 1;
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 5px;
-            padding-bottom: 10px;
+            padding: 10px 0;
+            border-top: 1px solid $color-line;
             border-bottom: 1px solid $color-line;
             margin-bottom: 20px;
             &--txt {
@@ -289,23 +296,38 @@ a {
                 p {
                     margin-bottom: 5px;
                 }
+                strong {
+                    color: #000;
+                }
             }
         }
         &-second {
-            grid-row-end: span 2;
-            grid-column: span 1;
             &--headline {
                 display: grid;
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 80px 1fr;
+                gap: 10px;
                 justify-content: center;
                 align-items: center;
                 figure {
-                    width: 100px;
+                    width: 80px;
+                }
+                .title {
+                    .subtitle {
+                        font-family: 'Roboto Slab', serif;
+                        font-weight: 300;
+                        font-style: italic;
+                    }
+                    .date {
+                        font-size: 13px;
+                        color: $color-menu;
+                        margin: 10px 0;
+                    }
                 }
             }
             &--txt {
                 padding-bottom: 10px;
                 border-bottom: 1px solid $color-line;
+                margin-top: 5px;
             }
             &--book {
                 background-color: $bg-btn;
@@ -316,8 +338,9 @@ a {
                 justify-content: center;
                 align-items: center;
                 justify-items: center;
+                margin: 20px 10px;
                 .book-logo {
-                    padding-bottom: 15px;
+                    padding-bottom: 10px;
                     span {
                         font-family: 'Dancing Script', cursive;
                         color: #d3eefb;
@@ -341,11 +364,167 @@ a {
                         border-bottom: 1px solid $color-line;
                     }
                     .btn-link {
+                        margin: 0;
                         span {
                             margin-left: 5px;
                         }
                     }
                 }
+            }
+        }
+    }
+    &__principal-new {
+        display: grid;
+        grid-template-rows: 320px 260px;
+        padding: 10px;
+        border: 1px solid $color-line;
+        align-items: stretch;
+        min-height: 590px;
+        .cover {
+            height: 320px;
+        }
+        .info {
+            h5 {
+                font-size: 24px;
+                margin: 10px 0;
+            }
+            .txt {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            &-share {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                small {
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    color: $color-menu;
+                }
+                .share {
+                    border: 0.1px solid $color-line;
+                    border-radius: 50%;
+                    padding: 2px;
+                    span {
+                        border-radius: 50%;
+                        background-color: #ffe4f4;
+                    }
+                }
+            }
+            .autor {
+                margin: 20px 0;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                justify-content: space-between;
+                align-items: center;
+                &-info {
+                    display: grid;
+                    grid-template-columns: 60px 1fr;
+                    gap: 5px;
+                    figure {
+                        width: 60px;
+                        height: 60px;
+                    }
+                    .about {
+                        margin: auto 0;
+                        align-self: center;
+                        p {
+                            font-size: 16px;
+                            font-weight: bold;
+                            color: #000;
+                        }
+                        .date {
+                            font-size: 12px;
+                            color: $color-menu;
+                        }
+                    }
+                }
+                .btns-navigation {
+                    margin-right: 0;
+                    text-align: right;
+                    a {
+                        padding: 10px;
+                        background-color: $bg-btn;
+                        color: $color-btn;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+    &__advertisement {
+        display: grid;
+        gap: 10px;
+        &--book {
+            background-color: $backgroun-book;
+            display: grid;
+            grid-template-columns: 70% 30%;
+            grid-template-rows: 100px;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            figure {
+                width: 95px;
+                margin-top: -20px;
+            }
+            &__info {
+                padding: 5px 15px;
+                small {
+                    display: block;
+                    margin-bottom: 10px;
+                }
+                .btn-link {
+                    border-radius: 3px;
+                    padding: 5px;
+                    margin-top: 10px;
+                    border: 1px solid $color-line;
+                }
+            }
+        }
+        &--column {
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            .column-news {
+                display: grid;
+                grid-template-columns: 40% 60%;
+                gap: 15px;
+                align-items: center;
+                padding: 10px 0;
+                border-bottom: 1px solid $color-line;
+                figure {
+                    width: 100px;
+                    height: 80px;
+                }
+                h6 {
+                    line-height: 1;
+                    em {
+                        font-family: "Roboto Slab", serif;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+        &--subscribe {
+            margin-top: 20px;
+            align-self: end;
+            input {
+                width: 100%;
+                border: none;
+                padding: 5px 0;
+                border-top: 1px solid $color-line;
+                border-bottom: 1px solid $color-line;
+                margin: 10px 0;
+            }
+            .btn-signme {
+                padding: 10px;
+                display: block;
+                text-align: center;
+                text-transform: uppercase;
+                width: 100%;
+                background-color: $bg-btn;
+                color: $color-btn;
+                margin: 10px auto;
             }
         }
     }
