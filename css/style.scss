@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans+Condensed:wght@300&family=Roboto+Slab&family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 $color-title: #0b0a0b;
 $color-news: #0b0a0c;
 $color-line: #747375;
@@ -59,19 +60,22 @@ small {
     font-size: 10px;
 }
 
+a {
+    text-decoration: none;
+    color: #000;
+}
+
 .newspaper {
     display: grid;
     grid-template-columns: minmax(auto, 1200px);
     justify-content: center;
-    // overflow: auto;
     &__container {
         display: grid;
         grid-template-rows: 40% 60%;
         gap: 10px;
         margin: 10px;
         border: 1px solid;
-        height: 100vh;
-        overflow: hidden;
+        overflow-x: hidden;
     }
 }
 
@@ -267,18 +271,90 @@ small {
 
 .Main {
     display: grid;
-    grid-template: repeat(3, 1fr) / 1fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     gap: 20px;
     padding: 20px;
+    height: 100vh;
     &__news {
         &-first {
             grid-row-end: span 1;
             display: grid;
             grid-template-columns: 2fr 1fr;
-            &--txt {}
+            gap: 5px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid $color-line;
+            margin-bottom: 20px;
+            &--txt {
+                h6,
+                p {
+                    margin-bottom: 5px;
+                }
+            }
         }
-        &-secd {
+        &-second {
             grid-row-end: span 2;
+            grid-column: span 1;
+            &--headline {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                justify-content: center;
+                align-items: center;
+                figure {
+                    width: 100px;
+                }
+            }
+            &--txt {
+                padding-bottom: 10px;
+                border-bottom: 1px solid $color-line;
+            }
+            &--book {
+                background-color: $bg-btn;
+                color: $color-btn;
+                padding: 10px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                justify-content: center;
+                align-items: center;
+                justify-items: center;
+                .book-logo {
+                    padding-bottom: 15px;
+                    span {
+                        font-family: 'Dancing Script', cursive;
+                        color: #d3eefb;
+                        font-size: 30px;
+                        display: block;
+                        &:last-of-type {
+                            margin: -12px auto;
+                            margin-left: 10px;
+                        }
+                    }
+                }
+                .book-info {
+                    text-transform: uppercase;
+                    p {
+                        font-weight: bold;
+                        font-family: 'Open Sans Condensed', sans-serif;
+                        small {
+                            display: block;
+                        }
+                        padding-bottom: 5px;
+                        border-bottom: 1px solid $color-line;
+                    }
+                    .btn-link {
+                        span {
+                            margin-left: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .btn-link {
+        margin-top: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        span {
+            font-size: 18px;
         }
     }
 }
